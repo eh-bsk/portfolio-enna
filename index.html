@@ -7,16 +7,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rajdhani:wght@400;600;700&family=Nunito:wght@400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#0b0b2a;--panel:#13133a;--panel2:#191950;--vio:#8b5cf6;--vio2:#a78bfa;--cyan:#06b6d4;--cyan2:#22d3ee;--pink:#ec4899;--pink2:#f472b6;--green:#10b981;--green2:#34d399;--yellow:#f59e0b;--muted:rgba(200,200,255,0.5);--bv:rgba(139,92,246,0.35);}
-*{margin:0;padding:0;box-sizing:border-box;cursor:none!important;}
+*{margin:0;padding:0;box-sizing:border-box;cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='28' viewBox='0 0 22 28'%3E%3Cpath d='M2 2L2 22L7.5 16.5L11.5 25L14.5 23.5L10.5 14.5H18L2 2Z' fill='white' stroke='%23a78bfa' stroke-width='1.8' stroke-linejoin='round'/%3E%3C/svg%3E") 2 2, auto!important;}
 html{scroll-behavior:smooth;}
 body{font-family:'Nunito',sans-serif;background:var(--bg);color:#f0f0ff;min-height:100vh;overflow-x:hidden;}
-body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 80% 60% at 15% 0%,rgba(139,92,246,.18),transparent 60%),radial-gradient(ellipse 60% 50% at 85% 100%,rgba(6,182,212,.14),transparent 55%);}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 80% 60% at 15% 0%,rgba(139,92,246,.22),transparent 60%),radial-gradient(ellipse 60% 50% at 85% 100%,rgba(6,182,212,.18),transparent 55%);}
 body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(139,92,246,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(139,92,246,.05) 1px,transparent 1px);background-size:50px 50px;}
 .fi{position:fixed;pointer-events:none;z-index:0;opacity:0;animation:fup linear infinite;user-select:none;filter:drop-shadow(0 0 5px rgba(139,92,246,.5));}
 @keyframes fup{0%{transform:translateY(105vh) rotate(0deg);opacity:0;}8%{opacity:.13;}88%{opacity:.13;}100%{transform:translateY(-10vh) rotate(360deg);opacity:0;}}
-#cur{position:fixed;pointer-events:none;z-index:9999;top:0;left:0;opacity:0;}
-#cur svg{filter:drop-shadow(0 0 6px rgba(167,139,250,.9));}
-@keyframes adrop{0%{opacity:0;transform:translateY(-8px) scale(.7);}40%{opacity:1;transform:translateY(4px) scale(1.1);}70%{transform:translateY(-2px) scale(1);}100%{opacity:0;transform:translateY(6px) scale(.9);}}
+
 .wrap{position:relative;z-index:1;max-width:1340px;margin:0 auto;}
 header{padding:5rem 2rem 3.5rem;display:flex;flex-direction:column;align-items:center;text-align:center;width:100%;}
 .badge{display:inline-flex;align-items:center;gap:.5rem;font-family:'Share Tech Mono',monospace;font-size:.62rem;letter-spacing:.18em;color:var(--green2);background:rgba(16,185,129,.06);border:1px solid rgba(52,211,153,.2);padding:.35rem 1rem;border-radius:3px;margin-bottom:1.8rem;opacity:.85;}
@@ -241,7 +239,6 @@ window.nm = function(e) {
 </head>
 <body>
 
-<div id="cur"><svg width="22" height="28" viewBox="0 0 22 28" fill="none"><path d="M2 2L2 22L7.5 16.5L11.5 25L14.5 23.5L10.5 14.5H18L2 2Z" fill="white" stroke="#a78bfa" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
 <div id="ntt"></div>
 
 <div class="wrap">
@@ -576,14 +573,20 @@ window.nm = function(e) {
 <!-- GRILLES -->
 <div id="grilles" class="pane">
   <div class="sh"><div class="sht">// grilles compétences</div><h2 class="shh">Grilles des <em>Compétences</em></h2><div class="shl"></div></div>
-  <div class="card"><div class="ph"><span class="phi">🔮</span><p>Contenu à venir...</p></div></div>
+  <div class="card cv" style="text-align:center;">
+    <div style="font-size:3rem;margin-bottom:1.2rem;">📊</div>
+    <p style="color:var(--muted);margin-bottom:2rem;font-size:.95rem;line-height:1.8;">Tableau de synthèse des compétences — Épreuve E5 BTS SIO 2025</p>
+    <a href="https://docs.google.com/spreadsheets/d/1fqWCSBm9ppOFpgV0fpPK4mQ_EZBq6RjX/edit?usp=drive_web" target="_blank" style="display:inline-flex;align-items:center;gap:.7rem;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.08em;color:var(--cyan2);background:rgba(6,182,212,.08);border:1px solid rgba(6,182,212,.35);padding:.8rem 2rem;border-radius:8px;text-decoration:none;transition:all .3s;" onmouseover="this.style.background='rgba(6,182,212,.18)';this.style.boxShadow='0 0 20px rgba(6,182,212,.3)'" onmouseout="this.style.background='rgba(6,182,212,.08)';this.style.boxShadow='none'">
+      <span>📄</span> Voir la grille des compétences
+    </a>
+  </div>
 </div>
 
 <!-- CONTACT -->
 <div id="contact" class="pane">
   <div class="sh"><div class="sht">// contact</div><h2 class="shh">Me <em>Contacter</em></h2><div class="shl"></div></div>
   <div class="ctgrid">
-    <div class="ctcard"><div class="ctico">📧</div><div class="ctlbl">Email</div><a href="mailto:hrnjicenna@gmail.com">hrnjicenna@gmail.com</a></div>
+    <div class="ctcard"><div class="ctico">📧</div><div class="ctlbl">Email</div><a href="/cdn-cgi/l/email-protection#e58d978b8f8c86808b8b84a58288848c89cb868a88"><span class="__cf_email__" data-cfemail="98f0eaf6f2f1fbfdf6f6f9d8fff5f9f1f4b6fbf7f5">[email&#160;protected]</span></a></div>
     <div class="ctcard"><div class="ctico">💼</div><div class="ctlbl">LinkedIn</div><a href="https://www.linkedin.com/in/enna-hrnjic" target="_blank">Enna Hrnjic</a></div>
     <div class="ctcard"><div class="ctico">📱</div><div class="ctlbl">Téléphone</div><a href="tel:0772321290">07.72.32.12.90</a></div>
   </div>
@@ -636,15 +639,23 @@ window.nm = function(e) {
   <h3>Bilan</h3><p>Ce projet m'a permis de renforcer mes compétences en administration système et en sécurité réseau, tout en mettant en pratique une architecture réelle avec DMZ, authentification centralisée et chiffrement des communications.</p>
 </div></div>
 
-<script>
-// CURSEUR — suit la souris en permanence, exactement comme l'original
-var cur = document.getElementById('cur');
-cur.style.opacity = '0';
-document.addEventListener('mousemove', function(e) {
-  cur.style.opacity = '1';
-  cur.style.left = e.clientX + 'px';
-  cur.style.top  = e.clientY + 'px';
-});
+<script data-cfasync="false">
+// FOND ICÔNES TECH FLOTTANTES
+(function(){
+  var icons = ['💻','🖥️','🖱️','⌨️','📡','🔒','🛡️','⚙️','🌐','📶','🔐','💾','🖨️','🔧','🔌','📲','🗄️','📊','🤖','🧩','📟','🕹️'];
+  for(var i=0;i<35;i++){
+    var el=document.createElement('div');
+    el.textContent=icons[Math.floor(Math.random()*icons.length)];
+    el.style.cssText='position:fixed;pointer-events:none;z-index:0;user-select:none;'
+      +'left:'+(Math.random()*100)+'vw;'
+      +'font-size:'+(Math.floor(Math.random()*22)+12)+'px;'
+      +'opacity:'+(Math.random()*0.10+0.04)+';'
+      +'animation:fup '+(14+Math.random()*20)+'s linear infinite;'
+      +'animation-delay:'+(-Math.random()*30)+'s;'
+      +'filter:drop-shadow(0 0 4px rgba(139,92,246,0.4));';
+    document.body.appendChild(el);
+  }
+})();
 
 // MODAL fermeture au clic fond
 window.addEventListener('click', function(e) {
@@ -678,12 +689,4 @@ document.querySelectorAll('.card,.pc,.ccard,.ctcard,.srv,.sb,.tlc').forEach(func
     el.className = 'fi';
     el.textContent = icons[Math.floor(Math.random() * icons.length)];
     el.style.left = Math.random() * 100 + 'vw';
-    el.style.fontSize = (1 + Math.random() * 1.2) + 'rem';
-    el.style.animationDuration = (13 + Math.random() * 22) + 's';
-    el.style.animationDelay = (-Math.random() * 35) + 's';
-    document.body.appendChild(el);
-  }
-})();
-</script>
-</body>
-</html>
+    el.st

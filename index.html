@@ -6,15 +6,23 @@
 <title>ENNA HRNJIC — Portfolio BTS SIO</title>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rajdhani:wght@400;600;700&family=Nunito:wght@400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0b0b2a;--panel:#13133a;--panel2:#191950;--vio:#8b5cf6;--vio2:#a78bfa;--cyan:#06b6d4;--cyan2:#22d3ee;--pink:#ec4899;--pink2:#f472b6;--green:#10b981;--green2:#34d399;--yellow:#f59e0b;--muted:rgba(200,200,255,0.5);--bv:rgba(139,92,246,0.35);}
+:root{--bg:#0f0f35;--panel:#13133a;--panel2:#191950;--vio:#8b5cf6;--vio2:#a78bfa;--cyan:#06b6d4;--cyan2:#22d3ee;--pink:#ec4899;--pink2:#f472b6;--green:#10b981;--green2:#34d399;--yellow:#f59e0b;--muted:rgba(200,200,255,0.5);--bv:rgba(139,92,246,0.35);}
 *{margin:0;padding:0;box-sizing:border-box;cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='28' viewBox='0 0 22 28'%3E%3Cpath d='M2 2L2 22L7.5 16.5L11.5 25L14.5 23.5L10.5 14.5H18L2 2Z' fill='white' stroke='%23a78bfa' stroke-width='1.8' stroke-linejoin='round'/%3E%3C/svg%3E") 2 2, auto!important;}
 html{scroll-behavior:smooth;}
-body{font-family:'Nunito',sans-serif;background:var(--bg);color:#f0f0ff;min-height:100vh;overflow-x:hidden;}
-body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 80% 60% at 15% 0%,rgba(139,92,246,.22),transparent 60%),radial-gradient(ellipse 60% 50% at 85% 100%,rgba(6,182,212,.18),transparent 55%);}
-body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(139,92,246,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(139,92,246,.05) 1px,transparent 1px);background-size:50px 50px;}
+body{font-family:'Nunito',sans-serif;background:#0f0f35;color:#f0f0ff;min-height:100vh;overflow-x:hidden;}
+body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(139,92,246,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(139,92,246,.06) 1px,transparent 1px);background-size:50px 50px;}
+.blob{position:fixed;pointer-events:none;border-radius:50%;filter:blur(80px);z-index:0;}
+.blob1{width:600px;height:600px;background:rgba(139,92,246,0.22);top:-100px;left:-100px;animation:blob1 10s ease-in-out infinite alternate;}
+.blob2{width:500px;height:500px;background:rgba(6,182,212,0.18);bottom:-80px;right:-80px;animation:blob2 13s ease-in-out infinite alternate;}
+.blob3{width:400px;height:400px;background:rgba(236,72,153,0.12);top:40%;left:40%;animation:blob3 9s ease-in-out infinite alternate;}
+.blob4{width:350px;height:350px;background:rgba(16,185,129,0.10);bottom:20%;left:10%;animation:blob4 11s ease-in-out infinite alternate;}
+@keyframes blob1{0%{transform:translate(0,0) scale(1);}100%{transform:translate(120px,80px) scale(1.2);}}
+@keyframes blob2{0%{transform:translate(0,0) scale(1);}100%{transform:translate(-100px,-60px) scale(1.15);}}
+@keyframes blob3{0%{transform:translate(0,0) scale(1);}100%{transform:translate(-80px,60px) scale(0.9);}}
+@keyframes blob4{0%{transform:translate(0,0) scale(1);}100%{transform:translate(60px,-80px) scale(1.1);}}
 .fi{position:fixed;pointer-events:none;z-index:0;opacity:0;animation:fup linear infinite;user-select:none;filter:drop-shadow(0 0 5px rgba(139,92,246,.5));}
 @keyframes fup{0%{transform:translateY(105vh) rotate(0deg);opacity:0;}8%{opacity:.13;}88%{opacity:.13;}100%{transform:translateY(-10vh) rotate(360deg);opacity:0;}}
-
+@keyframes floatup{0%{transform:translateY(0) rotate(0deg);}100%{transform:translateY(-110vh) rotate(20deg);}}
 .wrap{position:relative;z-index:1;max-width:1340px;margin:0 auto;}
 header{padding:5rem 2rem 3.5rem;display:flex;flex-direction:column;align-items:center;text-align:center;width:100%;}
 .badge{display:inline-flex;align-items:center;gap:.5rem;font-family:'Share Tech Mono',monospace;font-size:.62rem;letter-spacing:.18em;color:var(--green2);background:rgba(16,185,129,.06);border:1px solid rgba(52,211,153,.2);padding:.35rem 1rem;border-radius:3px;margin-bottom:1.8rem;opacity:.85;}
@@ -169,14 +177,11 @@ nav::after{content:'';display:block;height:1px;background:linear-gradient(90deg,
 .ctlbl{font-family:'Share Tech Mono',monospace;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan2);margin-bottom:.6rem;}
 .ctcard a{color:#fff;text-decoration:none;font-size:.95rem;font-weight:600;transition:color .3s;}
 .ctcard a:hover{color:var(--vio2);}
-.ph{text-align:center;padding:5rem 2rem;}
-.phi{font-size:3rem;display:block;margin-bottom:1rem;}
-.ph p{color:var(--muted);}
 .modal{display:none;position:fixed;z-index:1000;inset:0;background:rgba(0,0,0,.85);backdrop-filter:blur(15px);overflow-y:auto;}
 .mbox{background:var(--panel2);border:1px solid rgba(139,92,246,.4);border-radius:12px;margin:3% auto;padding:3rem;width:90%;max-width:790px;position:relative;box-shadow:0 40px 100px rgba(0,0,0,.7);animation:mopen .4s ease;}
 .mbox::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--vio),var(--cyan2),var(--pink),var(--vio));box-shadow:0 0 12px var(--vio);}
 @keyframes mopen{from{opacity:0;transform:scale(.96) translateY(18px);}to{opacity:1;transform:none;}}
-.mcl{position:absolute;top:1.5rem;right:1.5rem;width:34px;height:34px;border-radius:6px;background:rgba(255,255,255,.04);border:1px solid var(--bv);display:flex;align-items:center;justify-content:center;font-size:1rem;color:var(--muted);transition:all .3s;}
+.mcl{position:absolute;top:1.5rem;right:1.5rem;width:34px;height:34px;border-radius:6px;background:rgba(255,255,255,.04);border:1px solid var(--bv);display:flex;align-items:center;justify-content:center;font-size:1rem;color:var(--muted);transition:all .3s;cursor:pointer;}
 .mcl:hover{background:rgba(236,72,153,.12);color:#fff;}
 .mbox h2{font-family:'Rajdhani',sans-serif;font-size:1.6rem;font-weight:700;color:#fff;margin-bottom:2rem;padding-right:3rem;letter-spacing:.03em;}
 .mbox h3{font-family:'Share Tech Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan2);margin:2rem 0 .7rem;display:flex;align-items:center;gap:.5rem;}
@@ -184,14 +189,26 @@ nav::after{content:'';display:block;height:1px;background:linear-gradient(90deg,
 .mbox p,.mbox li{font-size:.93rem;color:rgba(200,200,255,.82);line-height:1.8;margin-bottom:.5rem;}
 .mbox ul{margin-left:1.5rem;}
 .mbox strong{color:var(--vio2);}
+
+/* ── NOUVEAU : blocs visuels dans les modaux ── */
+.menv{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.8rem;margin:.8rem 0 1.2rem;}
+.menvb{background:rgba(139,92,246,.07);border:1px solid rgba(139,92,246,.2);border-radius:7px;padding:.9rem 1rem;font-size:.83rem;color:rgba(200,200,255,.8);line-height:1.5;}
+.menvb strong{display:block;font-family:'Rajdhani',sans-serif;font-size:.75rem;font-weight:700;color:var(--cyan2);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem;}
+.msteps{counter-reset:step;display:flex;flex-direction:column;gap:.6rem;margin:.8rem 0 1.2rem;}
+.mstep{display:flex;align-items:flex-start;gap:.9rem;background:rgba(6,182,212,.04);border:1px solid rgba(6,182,212,.15);border-radius:7px;padding:.8rem 1rem;}
+.mstep::before{counter-increment:step;content:counter(step,"0")'';font-family:'Share Tech Mono',monospace;font-size:.72rem;color:var(--cyan2);min-width:24px;padding-top:.05rem;flex-shrink:0;}
+.mstep p{margin:0;font-size:.88rem;color:rgba(200,200,255,.8);line-height:1.6;}
+.mskills{display:flex;flex-wrap:wrap;gap:.5rem;margin:.8rem 0 1.2rem;}
+.msk{font-family:'Rajdhani',sans-serif;font-size:.82rem;font-weight:600;padding:.3rem .85rem;border-radius:4px;background:rgba(139,92,246,.1);border:1px solid rgba(139,92,246,.28);color:var(--vio2);}
+.mbilan{background:linear-gradient(135deg,rgba(16,185,129,.07),rgba(6,182,212,.03));border:1px solid rgba(16,185,129,.2);border-radius:8px;padding:1.4rem 1.6rem;margin-top:1.2rem;}
+.mbilan h4{font-family:'Rajdhani',sans-serif;font-size:.95rem;font-weight:700;color:var(--green2);letter-spacing:.06em;margin-bottom:.6rem;}
+.mbilan p{font-size:.88rem;color:rgba(200,200,255,.78);line-height:1.75;margin:0;}
+
 footer{text-align:center;padding:2rem;border-top:1px solid var(--bv);font-family:'Share Tech Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.15em;position:relative;z-index:1;}
 footer em{color:var(--vio2);font-style:normal;}
 @media(max-width:768px){header{padding:3rem 1.2rem;}.content{padding:2rem 1rem;}.tl{padding-left:2rem;}.tld{left:-2.3rem;}.mbox{padding:1.8rem;margin:5% auto;}.hn1{-webkit-text-stroke:2px #7c3aed;}.hn2{font-size:.65rem;}}
 </style>
-
-<!-- JS en tête pour que les fonctions soient globales avant tout onclick inline -->
 <script>
-// Déclaration GLOBALE avant le DOM — résout le ReferenceError
 window.showTab = function(id, btn) {
   var panes = document.getElementsByClassName('pane');
   for (var i = 0; i < panes.length; i++) panes[i].classList.remove('on');
@@ -199,21 +216,15 @@ window.showTab = function(id, btn) {
   for (var i = 0; i < btns.length; i++) btns[i].classList.remove('on');
   document.getElementById(id).classList.add('on');
   btn.classList.add('on');
-  var r = btn.getBoundingClientRect();
-
 };
-
 window.openModal = function(id) {
   document.getElementById(id).style.display = 'block';
   document.body.style.overflow = 'hidden';
 };
-
 window.closeModal = function(id) {
   document.getElementById(id).style.display = 'none';
   document.body.style.overflow = '';
 };
-
-// Tooltip SVG
 window._ntt = null;
 window.ns = function(e, el) {
   var t = document.getElementById('ntt');
@@ -239,6 +250,10 @@ window.nm = function(e) {
 </head>
 <body>
 
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+<div class="blob blob3"></div>
+<div class="blob blob4"></div>
 <div id="ntt"></div>
 
 <div class="wrap">
@@ -359,25 +374,13 @@ window.nm = function(e) {
           @keyframes zpu{0%,100%{opacity:.1}50%{opacity:.22}}
         </style>
       </defs>
-
-      <!-- ZONE LAN gauche — légèrement réduite -->
       <rect x="14" y="28" width="450" height="530" rx="14" fill="rgba(16,185,129,.05)" stroke="#10b981" stroke-width="1.5" stroke-dasharray="6 3" class="zp"/>
       <text x="32" y="54" font-family="'Share Tech Mono',monospace" font-size="10" fill="#34d399" letter-spacing="2">◈ ZONE INTERNE — LAN  10.0.211.0/24</text>
-
-      <!-- ZONE DMZ haut droite -->
       <rect x="685" y="28" width="495" height="230" rx="14" fill="rgba(245,158,11,.05)" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="6 3" class="zp"/>
       <text x="705" y="54" font-family="'Share Tech Mono',monospace" font-size="10" fill="#f59e0b" letter-spacing="2">◈ DMZ</text>
-
-      <!-- ZONE EXTERNE bas centre -->
       <rect x="200" y="650" width="530" height="130" rx="14" fill="rgba(236,72,153,.04)" stroke="#ec4899" stroke-width="1.5" stroke-dasharray="6 3" class="zp"/>
       <text x="218" y="673" font-family="'Share Tech Mono',monospace" font-size="10" fill="#f472b6" letter-spacing="2">◈ ZONE EXTERNE  172.28.211.0/24</text>
-
-      <!-- FIREWALL centre isolé hors zones -->
-      <g onmouseenter="ns(event,this)" onmouseleave="nh()"
-         data-n="PARE-FEU CENTRAL"
-         data-i="LAN : 10.0.211.1 | DMZ : 10.0.211.65 | EXT : 172.28.211.253"
-         data-r="Sécurité inter-zones"
-         data-d="Seul point de sortie vers Internet. 3 interfaces : LAN 10.0.211.1 — DMZ 10.0.211.65 — Externe 172.28.211.253">
+      <g onmouseenter="ns(event,this)" onmouseleave="nh()" data-n="PARE-FEU CENTRAL" data-i="LAN : 10.0.211.1 | DMZ : 10.0.211.65 | EXT : 172.28.211.253" data-r="Sécurité inter-zones" data-d="Seul point de sortie vers Internet. 3 interfaces : LAN 10.0.211.1 — DMZ 10.0.211.65 — Externe 172.28.211.253">
         <rect x="524" y="358" width="148" height="132" rx="12" fill="#0d0d30" stroke="#f59e0b" stroke-width="2.8" filter="url(#gfw)"/>
         <text x="598" y="398" font-size="30" text-anchor="middle">🔥</text>
         <text x="598" y="422" font-size="10" fill="#f59e0b" text-anchor="middle" font-family="'Rajdhani',sans-serif" font-weight="700">FIREWALL</text>
@@ -386,21 +389,12 @@ window.nm = function(e) {
         <text x="598" y="463" font-size="7.5" fill="#f59e0b" text-anchor="middle" font-family="'Share Tech Mono',monospace">DMZ  10.0.211.65</text>
         <text x="598" y="475" font-size="7.5" fill="#f472b6" text-anchor="middle" font-family="'Share Tech Mono',monospace">EXT  172.28.211.253</text>
       </g>
-
-      <!-- LIAISONS -->
-      <!-- FW -> LAN -->
       <line x1="524" y1="424" x2="464" y2="424" stroke="#34d399" stroke-width="2" class="lv" opacity=".85"/>
-      <!-- FW -> DMZ -->
       <line x1="672" y1="392" x2="760" y2="258" stroke="#f59e0b" stroke-width="2" class="lc" opacity=".8"/>
-      <!-- FW -> Externe -->
       <line x1="598" y1="490" x2="598" y2="650" stroke="#f472b6" stroke-width="2" class="lc" opacity=".75"/>
-      <!-- Externe -> Internet -->
       <line x1="730" y1="715" x2="920" y2="715" stroke="#818cf8" stroke-width="2" class="ls" opacity=".9"/>
       <text x="820" y="707" font-size="9" fill="#818cf8" font-family="'Share Tech Mono',monospace" text-anchor="middle">WAN</text>
-      <!-- AD01 <-> AD02 réplication -->
       <line x1="138" y1="152" x2="238" y2="152" stroke="#34d399" stroke-width="1" stroke-dasharray="3 3" opacity=".4"/>
-
-      <!-- LAN rangée 1 : AD-01, AD-02, SRV-FIC, TRUENAS — nœuds 108×84 espacés -->
       <g onmouseenter="ns(event,this)" onmouseleave="nh()" data-n="AD-01 — Contrôleur Primaire" data-i="10.0.211.66" data-r="Contrôleur de domaine principal" data-d="Rôles FSMO, authentification Kerberos, GPO et annuaire d'entreprise.">
         <rect x="24" y="68" width="108" height="84" rx="8" fill="#060b12" stroke="#10b981" stroke-width="1.8" filter="url(#gc)"/>
         <text x="78" y="100" font-size="22" text-anchor="middle">🏢</text>
@@ -425,8 +419,6 @@ window.nm = function(e) {
         <text x="446" y="122" font-size="9.5" fill="#34d399" text-anchor="middle" font-family="'Rajdhani',sans-serif" font-weight="700">TRUENAS</text>
         <text x="446" y="137" font-size="8" fill="#065f46" text-anchor="middle" font-family="'Share Tech Mono',monospace">10.0.211.68</text>
       </g>
-
-      <!-- LAN rangée 2 : CENTREON, WAZUH, W11 -->
       <g onmouseenter="ns(event,this)" onmouseleave="nh()" data-n="SRV-CENTREON" data-i="10.0.211.64" data-r="Supervision / Monitoring" data-d="Monitoring temps réel via SNMP et NRPE. Alertes et tableaux de bord.">
         <rect x="24" y="206" width="116" height="84" rx="8" fill="#080820" stroke="#8b5cf6" stroke-width="1.8" filter="url(#gv)"/>
         <text x="82" y="238" font-size="22" text-anchor="middle">📊</text>
@@ -445,8 +437,6 @@ window.nm = function(e) {
         <text x="342" y="260" font-size="9.5" fill="#22d3ee" text-anchor="middle" font-family="'Rajdhani',sans-serif" font-weight="700">W11 CLIENT</text>
         <text x="342" y="275" font-size="8" fill="#164e63" text-anchor="middle" font-family="'Share Tech Mono',monospace">10.0.211.70</text>
       </g>
-
-      <!-- DMZ nœuds -->
       <g onmouseenter="ns(event,this)" onmouseleave="nh()" data-n="SRV-LAMP" data-i="10.0.211.10" data-r="Serveur Web (DMZ)" data-d="LAMP Linux/Apache/MySQL/PHP. Accessible depuis l'extérieur via le pare-feu.">
         <rect x="698" y="68" width="100" height="78" rx="8" fill="#130a00" stroke="#f59e0b" stroke-width="1.8" filter="url(#go)"/>
         <text x="748" y="98" font-size="20" text-anchor="middle">🌐</text>
@@ -465,8 +455,6 @@ window.nm = function(e) {
         <text x="1007" y="118" font-size="9" fill="#fbbf24" text-anchor="middle" font-family="'Rajdhani',sans-serif" font-weight="700">HAPROXY</text>
         <text x="1007" y="132" font-size="8" fill="#92400e" text-anchor="middle" font-family="'Share Tech Mono',monospace">10.0.211.11</text>
       </g>
-
-      <!-- Zone externe nœuds -->
       <g onmouseenter="ns(event,this)" onmouseleave="nh()" data-n="DCB CLIENT" data-i="172.28.211.220" data-r="Client zone externe" data-d="Accès depuis réseau externe peu fiable. Trafic via pare-feu obligatoire.">
         <rect x="214" y="706" width="112" height="78" rx="8" fill="#130010" stroke="#ec4899" stroke-width="1.8" filter="url(#go)"/>
         <text x="270" y="736" font-size="20" text-anchor="middle">🖥️</text>
@@ -485,12 +473,8 @@ window.nm = function(e) {
         <text x="531" y="756" font-size="9" fill="#f472b6" text-anchor="middle" font-family="'Rajdhani',sans-serif" font-weight="700">HAPROXY</text>
         <text x="531" y="770" font-size="7.5" fill="#831843" text-anchor="middle" font-family="'Share Tech Mono',monospace">172.28.211.254</text>
       </g>
-
-      <!-- Internet -->
       <text x="1060" y="735" font-size="52" text-anchor="middle" opacity=".85">☁️</text>
       <text x="1060" y="781" font-size="10" fill="#818cf8" text-anchor="middle" font-family="'Share Tech Mono',monospace" letter-spacing="2">INTERNET</text>
-
-      <!-- Légende -->
       <rect x="760" y="806" width="390" height="26" rx="5" fill="rgba(0,0,0,.55)" stroke="rgba(139,92,246,.15)" stroke-width="1"/>
       <rect x="772" y="815" width="7" height="5" rx="1" fill="rgba(16,185,129,.2)" stroke="#10b981"/>
       <text x="783" y="822" font-size="7.5" fill="#34d399" font-family="'Share Tech Mono',monospace">LAN</text>
@@ -586,7 +570,7 @@ window.nm = function(e) {
 <div id="contact" class="pane">
   <div class="sh"><div class="sht">// contact</div><h2 class="shh">Me <em>Contacter</em></h2><div class="shl"></div></div>
   <div class="ctgrid">
-    <div class="ctcard"><div class="ctico">📧</div><div class="ctlbl">Email</div><a href="/cdn-cgi/l/email-protection#e58d978b8f8c86808b8b84a58288848c89cb868a88"><span class="__cf_email__" data-cfemail="98f0eaf6f2f1fbfdf6f6f9d8fff5f9f1f4b6fbf7f5">[email&#160;protected]</span></a></div>
+    <div class="ctcard"><div class="ctico">📧</div><div class="ctlbl">Email</div><a href="mailto:enna.hrnjic@example.com">enna.hrnjic@example.com</a></div>
     <div class="ctcard"><div class="ctico">💼</div><div class="ctlbl">LinkedIn</div><a href="https://www.linkedin.com/in/enna-hrnjic" target="_blank">Enna Hrnjic</a></div>
     <div class="ctcard"><div class="ctico">📱</div><div class="ctlbl">Téléphone</div><a href="tel:0772321290">07.72.32.12.90</a></div>
   </div>
@@ -597,96 +581,209 @@ window.nm = function(e) {
 
 <footer><em>ENNA HRNJIC</em> · BTS SIO SISR · <em>2025</em></footer>
 
-<!-- MODALS -->
+<!-- ═══════════════════════════════════════════════════════════
+     MODAUX PROJETS — contenu complet
+═══════════════════════════════════════════════════════════ -->
+
+<!-- MODAL P2 : Segmentation VLAN / Switch Dell -->
 <div id="p2" class="modal"><div class="mbox">
   <div class="mcl" onclick="closeModal('p2')">✕</div>
-  <h2>Configuration Switch Dell – Segmentation VLAN</h2>
-  <h3>Contexte</h3><p>Configuration d'un switch Dell pour un commissariat de police à Saint-Fons.</p>
-  <h3>Problématique</h3><p>Tous les équipements étaient sur un seul VLAN. Il fallait segmenter, sécuriser et permettre une administration centralisée.</p>
-  <h3>Réalisation</h3><p>Attribution d'IP fixe, suppression du VLAN 1, création du VLAN de management (VLAN 999), puis configuration de plus de 30 VLANs.</p>
-  <h3>Compétences développées</h3><ul><li>Configuration de switches Dell</li><li>Gestion et création de VLANs</li><li>Routage inter-VLAN</li><li>Administration à distance SSH</li></ul>
-  <h3>Bilan</h3><p>Manipulation d'un équipement réseau réel. Compréhension de la segmentation pour améliorer sécurité et fiabilité.</p>
+  <h2>🔧 Configuration Switch Dell — Segmentation VLAN</h2>
+
+  <h3>Contexte</h3>
+  <p>Dans le cadre de mon stage, j'ai été chargée de configurer un switch Dell pour un commissariat de police, dans le cadre d'un projet de <strong>segmentation réseau à l'échelle de la commune de Saint-Fons</strong>.</p>
+
+  <h3>Besoin</h3>
+  <p>L'objectif principal était de <strong>renforcer la sécurité du réseau</strong> : auparavant, tous les équipements (école, crèche, commissariat…) étaient sur le même VLAN, ce qui augmentait la vulnérabilité et représentait un risque en cas d'attaque. Il fallait donc segmenter le réseau et sécuriser l'administration du switch.</p>
+
+  <h3>Environnement</h3>
+  <div class="menv">
+    <div class="menvb"><strong>Matériel</strong>Switch Dell (verrouillé — réinitialisation complète nécessaire)</div>
+    <div class="menvb"><strong>Contexte</strong>Commissariat de police — Commune de Saint-Fons</div>
+    <div class="menvb"><strong>Périmètre</strong>Réseau communal multi-sites (école, crèche, comico…)</div>
+    <div class="menvb"><strong>Accès</strong>Interface graphique Dell + accès SSH configuré</div>
+  </div>
+
+  <h3>Réalisation</h3>
+  <div class="msteps">
+    <div class="mstep"><p>Réinitialisation complète du switch (matériel verrouillé, identifiants inconnus)</p></div>
+    <div class="mstep"><p>Création d'un nouvel utilisateur avec privilèges de <strong>niveau 15 (administrateur)</strong> pour accéder à toutes les fonctionnalités de l'interface Dell</p></div>
+    <div class="mstep"><p>Attribution d'une <strong>IP fixe</strong> au switch et configuration de la passerelle</p></div>
+    <div class="mstep"><p>Suppression du <strong>VLAN 1 par défaut</strong> (source potentielle de problèmes de sécurité)</p></div>
+    <div class="mstep"><p>Création d'un <strong>VLAN de management 999</strong> pour sécuriser l'accès à distance</p></div>
+    <div class="mstep"><p>Activation des accès <strong>SSH</strong> pour l'administration sécurisée</p></div>
+    <div class="mstep"><p>Configuration de <strong>plus de 30 VLANs</strong>, certains avec adressage DHCP (ex. VLAN 40, classe C…)</p></div>
+    <div class="mstep"><p>Configuration des ports en modes <strong>access, trunk et général</strong></p></div>
+    <div class="mstep"><p>Vérification de la connectivité et du <strong>routage inter-VLAN</strong> — tests d'attribution d'adresses dynamiques</p></div>
+  </div>
+
+  <h3>Compétences développées</h3>
+  <div class="mskills">
+    <span class="msk">Switch Dell</span>
+    <span class="msk">Segmentation VLAN</span>
+    <span class="msk">Routage inter-VLAN</span>
+    <span class="msk">SSH</span>
+    <span class="msk">DHCP</span>
+    <span class="msk">Modes access / trunk</span>
+    <span class="msk">Administration réseau</span>
+    <span class="msk">Réinitialisation matériel</span>
+  </div>
+
+  <div class="mbilan">
+    <h4>▶ Bilan</h4>
+    <p>Ce projet m'a permis de manipuler un vrai équipement réseau qui diffère de ceux de Cisco — j'ai dû m'adapter à des commandes majoritairement différentes. J'ai pu comprendre l'importance et la logique de la segmentation réseau pour assurer la performance, la sécurité et la fiabilité d'une infrastructure multi-sites.</p>
+  </div>
 </div></div>
 
-<div id="p3" class="modal"><div class="mbox">
-  <div class="mcl" onclick="closeModal('p3')">✕</div>
-  <h2>Supervision avec Centreon</h2>
-  <h3>Contexte</h3><p>Mise en place d'une solution de supervision pour une infrastructure Linux, Windows et équipements réseau.</p>
-  <h3>Environnement</h3><ul><li>VM Debian 12 + Centreon</li><li>Protocoles SNMPv3 et HTTPS</li><li>Machines Linux et Windows supervisées</li></ul>
-  <h3>Réalisation</h3><p>Installation Centreon sur VM Debian 12, sécurisation MariaDB/HTTPS/SNMPv3. Ajout des hôtes, configuration des connecteurs, tests d'alertes.</p>
-  <h3>Compétences développées</h3><ul><li>Installation et configuration de Centreon</li><li>Administration système Linux</li><li>Sécurisation d'infrastructure</li><li>Supervision mixte Linux/Windows</li></ul>
-  <h3>Bilan</h3><p>Démarche complète : installation → sécurisation → configuration → tests.</p>
-</div></div>
-
+<!-- MODAL P4 : Migration Agent SIMON -->
 <div id="p4" class="modal"><div class="mbox">
   <div class="mcl" onclick="closeModal('p4')">✕</div>
-  <h2>Migration et automatisation d'un agent SIMON</h2>
-  <h3>Contexte</h3><p>Remplacement de l'agent <strong>SIMON</strong> devenu obsolète sur l'ensemble des serveurs de l'entreprise.</p>
-  <h3>Environnement</h3><ul><li>Serveurs Windows web et applicatifs</li><li>Outil de supervision : <strong>SIMON</strong></li><li>Outil de déploiement : <strong>Tanium</strong></li></ul>
-  <h3>Réalisation</h3><p>Migration manuelle sur 5 serveurs pilotes pour valider la procédure, puis automatisation via le module Deploy de Tanium.</p>
-  <h3>Compétences développées</h3><ul><li>Gestion d'une migration technique</li><li>Déploiement automatisé avec Tanium</li><li>Administration de serveurs Windows</li><li>Gestion de projet avec phase pilote</li></ul>
-  <h3>Bilan</h3><p>Compréhension de la gestion d'une migration en limitant les risques grâce à une phase pilote.</p>
+  <h2>🤖 Migration et automatisation d'un agent de supervision</h2>
+
+  <h3>Contexte</h3>
+  <p>L'entreprise utilise l'outil de supervision <strong>SIMON</strong> pour surveiller plusieurs serveurs (web, applicatifs…). L'agent de supervision installé était devenu <strong>obsolète</strong>. Il a donc été décidé de le remplacer par une version plus récente (<strong>snclient</strong>) afin d'assurer la continuité et la fiabilité de la supervision.</p>
+
+  <h3>Besoin</h3>
+  <p>L'objectif était de remplacer l'ancien agent par le nouveau, garantir la continuité des remontées d'alertes, limiter les interruptions de service et <strong>automatiser le déploiement</strong> pour l'ensemble des serveurs. L'enjeu principal était d'éviter les erreurs humaines et de sécuriser la migration.</p>
+
+  <h3>Environnement</h3>
+  <div class="menv">
+    <div class="menvb"><strong>Serveurs</strong>Windows (web, applicatifs…)</div>
+    <div class="menvb"><strong>Supervision</strong>Outil SIMON</div>
+    <div class="menvb"><strong>Déploiement</strong>Tanium — module Deploy</div>
+    <div class="menvb"><strong>Accès</strong>Droits administrateur sur les serveurs</div>
+  </div>
+
+  <h3>Réalisation</h3>
+  <div class="msteps">
+    <div class="mstep"><p><strong>Phase pilote :</strong> migration manuelle sur 5 serveurs peu critiques pour valider la procédure</p></div>
+    <div class="mstep"><p>Désinstallation de l'ancien agent sur chaque serveur pilote</p></div>
+    <div class="mstep"><p>Installation du nouvel agent (<strong>snclient</strong>) et redémarrage du service</p></div>
+    <div class="mstep"><p>Vérification dans les services Windows et contrôle du bon fonctionnement dans SIMON</p></div>
+    <div class="mstep"><p>Une fois la procédure validée : <strong>automatisation via le module Deploy de Tanium</strong></p></div>
+    <div class="mstep"><p>Création d'un package contenant un script reproduisant automatiquement toutes les actions : désinstallation, installation silencieuse, redémarrage du service</p></div>
+    <div class="mstep"><p>Déploiement centralisé sur les serveurs restants — migration plus rapide et sécurisée</p></div>
+  </div>
+
+  <h3>Compétences développées</h3>
+  <div class="mskills">
+    <span class="msk">Migration technique</span>
+    <span class="msk">Tanium Deploy</span>
+    <span class="msk">Scripting Windows</span>
+    <span class="msk">Administration serveurs</span>
+    <span class="msk">Gestion de parc</span>
+    <span class="msk">Phase pilote</span>
+    <span class="msk">Réduction des risques</span>
+  </div>
+
+  <div class="mbilan">
+    <h4>▶ Bilan</h4>
+    <p>Ce projet m'a permis de comprendre le fonctionnement d'une infrastructure de supervision, de gérer une migration technique en limitant les risques, et de participer à la mise en place d'une automatisation via un outil de gestion de parc. J'ai saisi l'importance d'une <strong>phase pilote avant tout déploiement global</strong> pour valider une procédure et sécuriser la transition.</p>
+  </div>
 </div></div>
 
+<!-- MODAL P3 : Supervision Centreon -->
+<div id="p3" class="modal"><div class="mbox">
+  <div class="mcl" onclick="closeModal('p3')">✕</div>
+  <h2>📊 Mise en place d'une solution de supervision avec Centreon</h2>
+
+  <h3>Contexte</h3>
+  <p>Dans le cadre du BTS SIO, j'ai réalisé un projet de mise en place d'une solution de supervision pour une infrastructure comprenant des <strong>serveurs Linux, Windows et des équipements réseau</strong>. L'objectif était de répondre aux besoins de surveillance afin d'anticiper les pannes et de renforcer la sécurité du système d'information.</p>
+
+  <h3>Besoin</h3>
+  <p>La DSI souhaitait mettre en place une <strong>supervision centralisée</strong> : surveiller la disponibilité des machines, contrôler les performances (CPU, RAM, disque…), être alertée en cas d'incident et sécuriser les échanges liés à la supervision. L'enjeu était à la fois <strong>opérationnel</strong> (détection des pannes) et <strong>sécuritaire</strong>.</p>
+
+  <h3>Environnement</h3>
+  <div class="menv">
+    <div class="menvb"><strong>Serveur</strong>VM Debian 12</div>
+    <div class="menvb"><strong>Solution</strong>Centreon (architecture serveur central)</div>
+    <div class="menvb"><strong>Protocoles</strong>SNMPv3 + HTTPS</div>
+    <div class="menvb"><strong>Supervisé</strong>Machines Linux et Windows</div>
+  </div>
+
+  <h3>Réalisation</h3>
+  <div class="msteps">
+    <div class="mstep"><p>Installation de <strong>Centreon</strong> sur une VM Debian 12 en architecture serveur central</p></div>
+    <div class="mstep"><p>Sécurisation de la base de données <strong>MariaDB</strong></p></div>
+    <div class="mstep"><p>Mise en place de l'accès <strong>HTTPS</strong> pour chiffrer l'interface web</p></div>
+    <div class="mstep"><p>Modification du mot de passe administrateur par défaut + application de la politique de sécurité des mots de passe</p></div>
+    <div class="mstep"><p>Configuration de <strong>SNMPv3</strong> pour sécuriser les échanges entre le serveur et les hôtes</p></div>
+    <div class="mstep"><p>Ajout de plusieurs hôtes Linux et Windows, installation et configuration des <strong>connecteurs de supervision</strong> adaptés</p></div>
+    <div class="mstep"><p>Supervision des services : disponibilité (ping), utilisation <strong>CPU</strong>, mémoire, espace disque</p></div>
+    <div class="mstep"><p>Export de la configuration vers le collecteur après chaque ajout pour activer la supervision</p></div>
+    <div class="mstep"><p><strong>Tests fonctionnels</strong> : simulation d'arrêts de machines pour vérifier la remontée des alertes et le changement d'état des services</p></div>
+  </div>
+
+  <h3>Compétences développées</h3>
+  <div class="mskills">
+    <span class="msk">Centreon</span>
+    <span class="msk">SNMPv3</span>
+    <span class="msk">HTTPS / TLS</span>
+    <span class="msk">MariaDB</span>
+    <span class="msk">Administration Linux</span>
+    <span class="msk">Supervision mixte</span>
+    <span class="msk">Alerting</span>
+    <span class="msk">Tests fonctionnels</span>
+  </div>
+
+  <div class="mbilan">
+    <h4>▶ Bilan</h4>
+    <p>Ce projet m'a permis de comprendre le fonctionnement d'une solution de supervision centralisée et de mettre en œuvre une <strong>démarche méthodique complète</strong> : installation → sécurisation → configuration → tests. J'ai manipulé une installation Linux en environnement serveur et appliqué des mécanismes de sécurisation concrets (HTTPS, SNMPv3), tout en comprenant la différence entre hôte, service et collecteur.</p>
+  </div>
+</div></div>
+
+<!-- MODAL P5 : Nextcloud -->
 <div id="p5" class="modal"><div class="mbox">
   <div class="mcl" onclick="closeModal('p5')">✕</div>
-  <h2>Mise en place d'une solution Nextcloud</h2>
-  <h3>Contexte</h3><p>Dans le cadre du BTS SIO, j'ai réalisé un projet de mise en place d'une solution de stockage et de partage de fichiers sécurisée. L'objectif était de proposer une alternative cloud interne, accessible depuis le réseau local et l'extérieur, tout en garantissant la sécurité des données grâce à Nextcloud.</p>
-  <h3>Besoin</h3><ul><li>Centraliser le stockage des fichiers</li><li>Permettre un accès interne et externe</li><li>Sécuriser les données</li><li>Intégrer l'authentification avec Active Directory</li><li>Mettre en place une synchronisation automatique des postes</li></ul>
-  <h3>Environnement</h3><ul><li><strong>Serveur Debian 13</strong></li><li>Nextcloud en DMZ</li><li>Active Directory dans le LAN</li><li>Serveur web <strong>Nginx</strong></li><li>Base de données <strong>MariaDB</strong></li><li>Accès sécurisé en HTTPS</li></ul>
-  <h3>Réalisation</h3><p>J'ai installé et configuré un serveur Debian avec Nextcloud, ainsi que les composants nécessaires (Nginx, PHP, base de données). J'ai ensuite sécurisé la solution avec HTTPS et configuré le pare-feu pour isoler le serveur en DMZ. L'intégration avec Active Directory a été réalisée via LDAP afin de permettre aux utilisateurs de se connecter avec leurs identifiants de domaine. Enfin, j'ai installé le client Nextcloud sur un poste afin de tester la synchronisation des fichiers.</p>
-  <h3>Compétences développées</h3><ul><li>Mise en place d'une solution cloud privée</li><li>Architecture réseau avec DMZ</li><li>Intégration d'un service avec Active Directory via LDAP</li><li>Sécurisation HTTPS et filtrage réseau</li><li>Administration système Linux (Debian, Nginx, PHP, MariaDB)</li></ul>
-  <h3>Bilan</h3><p>Ce projet m'a permis de renforcer mes compétences en administration système et en sécurité réseau, tout en mettant en pratique une architecture réelle avec DMZ, authentification centralisée et chiffrement des communications.</p>
+  <h2>☁️ Déploiement d'une solution cloud Nextcloud</h2>
+
+  <h3>Contexte</h3>
+  <p>L'entreprise souhaitait disposer d'un <strong>cloud privé sécurisé</strong> pour le stockage et le partage de fichiers, accessible depuis l'intranet et à distance, afin de remplacer les solutions de partage traditionnelles et améliorer la collaboration interne.</p>
+
+  <h3>Besoin</h3>
+  <p>L'objectif était de mettre en place un cloud privé sécurisé pour les utilisateurs internes et externes, assurer la <strong>synchronisation des fichiers</strong> sur les postes clients, intégrer l'authentification via <strong>Active Directory (LDAP)</strong> et automatiser les sauvegardes. L'enjeu principal était de sécuriser l'accès aux données tout en garantissant leur disponibilité.</p>
+
+  <h3>Environnement</h3>
+  <div class="menv">
+    <div class="menvb"><strong>Serveur</strong>Debian 13</div>
+    <div class="menvb"><strong>Application</strong>Nextcloud en DMZ</div>
+    <div class="menvb"><strong>Web</strong>Nginx + PHP</div>
+    <div class="menvb"><strong>BDD</strong>MariaDB</div>
+    <div class="menvb"><strong>Auth</strong>Active Directory via LDAP</div>
+    <div class="menvb"><strong>Clients</strong>Windows et Linux</div>
+    <div class="menvb"><strong>Accès</strong>HTTPS sécurisé</div>
+    <div class="menvb"><strong>Sauvegarde</strong>Scripts automatisés</div>
+  </div>
+
+  <h3>Réalisation</h3>
+  <div class="msteps">
+    <div class="mstep"><p>Installation et configuration de <strong>Nextcloud</strong> sur le serveur Debian avec Nginx, PHP et MariaDB</p></div>
+    <div class="mstep"><p>Sécurisation de la solution avec <strong>HTTPS</strong> et configuration du pare-feu pour isoler le serveur en <strong>DMZ</strong></p></div>
+    <div class="mstep"><p>Intégration avec <strong>Active Directory via LDAP</strong> : les utilisateurs se connectent avec leurs identifiants de domaine</p></div>
+    <div class="mstep"><p>Configuration des clients Nextcloud pour la <strong>synchronisation des fichiers</strong> sur postes Windows et Linux</p></div>
+    <div class="mstep"><p>Mise en place des <strong>sauvegardes automatisées</strong> via scripts pour sécuriser les données</p></div>
+    <div class="mstep"><p>Tests et validation : fonctionnement, sécurité, permissions, synchronisation client</p></div>
+  </div>
+
+  <h3>Compétences développées</h3>
+  <div class="mskills">
+    <span class="msk">Nextcloud</span>
+    <span class="msk">Nginx</span>
+    <span class="msk">MariaDB</span>
+    <span class="msk">LDAP / AD</span>
+    <span class="msk">DMZ</span>
+    <span class="msk">HTTPS / TLS</span>
+    <span class="msk">Sauvegardes automatisées</span>
+    <span class="msk">Administration Linux</span>
+    <span class="msk">Synchronisation client</span>
+  </div>
+
+  <div class="mbilan">
+    <h4>▶ Bilan</h4>
+    <p>Ce projet m'a permis de renforcer mes compétences en administration système et en sécurité réseau, tout en mettant en pratique une <strong>architecture réelle avec DMZ</strong>, authentification centralisée et chiffrement des communications. J'ai compris l'importance d'une stratégie de sauvegarde automatisée et appris à valider une solution complète avant sa mise en production.</p>
+  </div>
 </div></div>
 
-<script data-cfasync="false">
-// FOND ICÔNES TECH FLOTTANTES
-(function(){
-  var icons = ['💻','🖥️','🖱️','⌨️','📡','🔒','🛡️','⚙️','🌐','📶','🔐','💾','🖨️','🔧','🔌','📲','🗄️','📊','🤖','🧩','📟','🕹️'];
-  for(var i=0;i<35;i++){
-    var el=document.createElement('div');
-    el.textContent=icons[Math.floor(Math.random()*icons.length)];
-    el.style.cssText='position:fixed;pointer-events:none;z-index:0;user-select:none;'
-      +'left:'+(Math.random()*100)+'vw;'
-      +'font-size:'+(Math.floor(Math.random()*22)+12)+'px;'
-      +'opacity:'+(Math.random()*0.10+0.04)+';'
-      +'animation:fup '+(14+Math.random()*20)+'s linear infinite;'
-      +'animation-delay:'+(-Math.random()*30)+'s;'
-      +'filter:drop-shadow(0 0 4px rgba(139,92,246,0.4));';
-    document.body.appendChild(el);
-  }
-})();
 
-// MODAL fermeture au clic fond
-window.addEventListener('click', function(e) {
-  if (e.target.classList.contains('modal')) {
-    e.target.style.display = 'none';
-    document.body.style.overflow = '';
-  }
-});
-
-// TOOLTIP mousemove sur noeuds SVG
-document.querySelectorAll('[onmouseenter]').forEach(function(el) {
-  el.addEventListener('mousemove', window.nm);
-});
-
-// TILT 3D
-document.querySelectorAll('.card,.pc,.ccard,.ctcard,.srv,.sb,.tlc').forEach(function(c) {
-  c.addEventListener('mousemove', function(e) {
-    var r = c.getBoundingClientRect();
-    var x = (e.clientX - r.left) / r.width - 0.5;
-    var y = (e.clientY - r.top) / r.height - 0.5;
-    c.style.transform = 'translateY(-4px) rotateX(' + (-y*6) + 'deg) rotateY(' + (x*6) + 'deg)';
-  });
-  c.addEventListener('mouseleave', function() { c.style.transform = ''; });
-});
-
-// ICÔNES FLOTTANTES
-(function() {
-  var icons = ['💻','🖥️','🖱️','⌨️','📡','🔒','🛡️','⚙️','🌐','📶','🔐','💾','🖨️','📟','🔧','🔌','📲','🗄️','🕹️','📊'];
-  for (var i = 0; i < 28; i++) {
-    var el = document.createElement('div');
-    el.className = 'fi';
-    el.textContent = icons[Math.floor(Math.random() * icons.length)];
-    el.style.left = Math.random() * 100 + 'vw';
-    el.st
+</body>
+</html>
